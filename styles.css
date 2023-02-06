@@ -39,5 +39,21 @@ button.active {
 
 /* COLOR PICKER */
 
+#color-picker {
+    border: none;
+    width: 80px;
+    height: 80px;
+  }
+
+input[type='color']:hover {
+    transform: scale(1.2);
+  }
+
+input[type='color']:active {
+    transition: transform 0.05s ease-in-out;
+    transform: scale(1);
+  }
+
+
 
 
