@@ -33,6 +33,11 @@ button:hover {
 }
 
 button.active {
-    background-color: grey;
+    background-color: black;
+    color: white;
 }
+
+/* COLOR PICKER */
+
+
 

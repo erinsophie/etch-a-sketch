@@ -3,8 +3,9 @@
 const grid = document.querySelector('.grid-container');
 const colorBtns = document.querySelectorAll('.color-btns');
 const resetBtn = document.querySelector('.reset-btn');
-const buttonsContainer = document.querySelectorAll('.buttons-container button')
-let currentMode = ''
+const colorPicker = document.querySelector('#color-picker');
+const buttonsContainer = document.querySelectorAll('.buttons-container button');
+let currentMode = 'black';
 
 //EVENT LISTENERS 
 resetBtn.addEventListener('click', resetGrid);
@@ -38,7 +39,7 @@ function changeColor() {
             this.style.backgroundColor = 'white';
             break;
         default:
-            this.style.backgroundColor = 'black';
+            this.style.backgroundColor = currentMode;
             break;
     }
 }
@@ -66,6 +67,11 @@ function resetGrid() {
     let gridPixels = grid.querySelectorAll('div');
     gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = 'white');
 }
+
+//COLOR PICKER 
+colorPicker.addEventListener('input', function() {
+    currentMode = this.value;
+  });
 
 //CHANGE COLOR OF BUTTON WHEN IN USE  
 //The first for each loop is looping over each button in the node list and adding a click event listener to it using an anonymous function
