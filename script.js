@@ -1,40 +1,30 @@
 // DOM NODES
-//This grabs the already existing grid-container div 
 
 const grid = document.querySelector('.grid-container');
-const blackPixels = document.querySelector('.black-pixels');
-const rainbowPixels = document.querySelector('.rainbow-pixels')
+const blackBtn = document.querySelector('.black-button');
+const rainbowBtn = document.querySelector('.rainbow-button');
+let currentMode = 'black'
+
 
 //EVENT LISTENERS 
 
-blackPixels.addEventListener('click', changeColor);
-rainbowPixels.addEventListener('click', changeColor);
 
-
-//SET UP GRID 
-//This loop creates a 16 * 16 grid by creating a new div element each iteration and setting its class to "square" then appending that square div to the parent element grid div
+//CREATE GRID
 
 function createGrid() {
     for (let i = 0; i < 16 * 16; i++) {
-    const square = document.createElement('div');
-    square.classList.add('square');
-    square.addEventListener('mousedown', changeColor);
-    square.addEventListener('mouseover', changeColor);
-    grid.appendChild(square);
+    const gridItem = document.createElement('div');
+    gridItem.classList.add('square');
+    grid.appendChild(gridItem);
   }
+  //grid pixels contains all divs inside grid
+  //we add an event listener to all divs inside grid 
+  let gridPixels = grid.querySelectorAll('div');
+  gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', changeColor))
 }
 
 createGrid()
-   
-//COLORS
 
-function changeColor() {
-   this.style.backgroundColor = 'black';
+function changeColor(e) {
+    e.target.style.backgroundColor = 'black';
 }
-
-
-
-
-
-
-
