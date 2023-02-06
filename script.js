@@ -3,16 +3,14 @@
 const grid = document.querySelector('.grid-container');
 const colorBtns = document.querySelectorAll('.color-btns');
 const resetBtn = document.querySelector('.reset-btn');
+const buttonsContainer = document.querySelectorAll('.buttons-container button')
 let currentMode = ''
 
 //EVENT LISTENERS 
-
-colorBtns.forEach(button => button.addEventListener('click', updateCurrentMode));
 resetBtn.addEventListener('click', resetGrid);
-
+colorBtns.forEach(button => button.addEventListener('click', updateCurrentMode));
 
 //CREATE GRID
-
 function createGrid() {
     for (let i = 0; i < 16 * 16; i++) {
     const gridItem = document.createElement('div');
@@ -28,7 +26,6 @@ function createGrid() {
 createGrid()
 
 //FUNCTION TO CHANGE THE COLOR OF THE GRID PIXELS
-
 function changeColor() {
     switch (currentMode) {
         case 'black':
@@ -46,10 +43,7 @@ function changeColor() {
     }
 }
 
-
-
 //UPDATE CURRENT MODE WHEN BUTTON IS CLICKED 
-
 function updateCurrentMode(e) {
     switch (e.target.dataset.color) {
         case 'black':
@@ -67,10 +61,21 @@ function updateCurrentMode(e) {
     }
 }
 
-//FUNCTION TO RESET GRID 
-
+//FUNCTION TO RESET GRID PIXELS
 function resetGrid() {
     let gridPixels = grid.querySelectorAll('div');
     gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = 'white');
 }
+
+//CHANGE COLOR OF BUTTON WHEN IN USE  
+//The first for each loop is looping over each button in the node list and adding a click event listener to it using an anonymous function
+//Within the anonymous function, another for each loop is used to loop through all the buttons in the  node list and removes the class active from all of them
+// The last part is adding the class active to the button that was clicked, as this refers to the button element that was clicked on
+buttonsContainer.forEach(button => button.addEventListener('click', function() {
+    buttonsContainer.forEach(button => button.classList.remove('active'));
+    this.classList.add('active');
+  }));
+
+
+
 

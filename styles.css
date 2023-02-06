@@ -3,6 +3,8 @@
     box-sizing: border-box;
 }
 
+/* GRID */
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -18,3 +20,19 @@
     width: 100%;
     height: 100%;
 }
+
+/* BUTTONS */
+
+button {
+    background-color: white;
+    color: black;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+button.active {
+    background-color: grey;
+}
+
