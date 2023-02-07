@@ -30,6 +30,7 @@ function createGrid(size) {
   gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', changeColor));
 }
 
+
 //FUNCTION TO CHANGE THE COLOR OF THE GRID PIXELS
 function changeColor() {
     switch (currentMode) {

@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap" rel="stylesheet"> 
     <title>🎨Etch-a-Sketch</title>
 </head>
 <body>
@@ -18,26 +21,25 @@
           <div class="navigation">
             <div class="buttons-container">
              <div class="color-picker-container">
-               <input id="color-picker" type="color" value="#22c1c3">
-                 <p>Pick a color</p>
-             </div>
-               <button class="color-btns" data-color="black">Black</button>
-               <button class="color-btns" data-color="rainbow">Rainbow</button>
-               <button class="color-btns" data-color="eraser">Eraser</button>
-               <button class="reset-btn">Reset</button>
+               <input id="color-picker" type="color" value="#36f3d9">
+                 <p>Pick a color 🎨</p>
+                </div>
+                  <button class="color-btns" data-color="black">Black</button>
+                  <button class="color-btns" data-color="rainbow">Rainbow</button>
+                  <button class="color-btns" data-color="eraser">Eraser</button>
+                  <button class="reset-btn">Reset</button>
+              </div>
+            <div class="slider-container">
+              <p>Grid Size</p>
+              <input type="range" min="4" max="64" value="16" class="slider">
+              <p id="number-of-pixels">16 x 16</p>
            </div>
-
-        <div class="slider-container">
-            <p>Grid Size</p>
-            <input type="range" min="4" max="64" value="16" class="slider">
-            <p id="number-of-pixels">16 x 16</p>
         </div>
-      </div>
           <div class="grid-wrapper">
             <div class="grid-container"></div>
           </div>
-    </div>
-</div>
+        </div>
+     </div>
 
     <script src="script.js"></script>
 </body>
