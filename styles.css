@@ -6,17 +6,15 @@
 /* GRID */
 
 .grid-container {
+    border: 0.5px solid black;
     display: grid;
-    grid-gap: 1px;
     width: 500px;
     height: 500px;
 }
 
 .square {
     background-color: white;
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    border: 0.5px solid grey;
 }
 
 /* BUTTONS */
@@ -56,7 +54,6 @@ input[type='color']:active {
 
 .slider-container {
     height: 100px;
-    border: 1px solid red;
   }
 
 .slider {

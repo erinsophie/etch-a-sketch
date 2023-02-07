@@ -11,12 +11,14 @@ let currentMode = 'black';
 //EVENT LISTENERS 
 resetBtn.addEventListener('click', resetGrid);
 colorBtns.forEach(button => button.addEventListener('click', updateCurrentMode));
+slider.addEventListener('mouseup', changePixelSize);
+
 
 //CREATE GRID
 function createGrid(size) {
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-    
+
     for (let i = 0; i < size * size; i++) {
     const gridItem = document.createElement('div');
     gridItem.classList.add('square');
@@ -93,12 +95,35 @@ function buttonClick() {
 buttonClick()
 
 //SLIDER
-function pixelSize() {
-    
-    
+//This function updates the size of the grid by first removing all existing grid pixels
+//then creates a new grid using the value from the slider
+//The new grid size is determined by calling the createGrid function and passing in its current value
+function changePixelSize() {
+    let gridPixels = grid.querySelectorAll('div');
+    gridPixels.forEach(gridPixel => gridPixel.remove());
+    createGrid(slider.value);
+    updateSizeLabel();
 }
 
-pixelSize()
+changePixelSize()
+
+
+
+//function updateSizeLabel() {
+//    slider.oninput = function() {
+//        output.innerHTML = this.value;
+//      }
+//}
+
+
+
+
+
+
+
+
+
+
 
 
 
