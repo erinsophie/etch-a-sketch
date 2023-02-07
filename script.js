@@ -7,6 +7,8 @@ const buttonsContainer = document.querySelectorAll('.buttons-container button');
 const slider = document.querySelector('.slider');
 const output = document.querySelector('#number-of-pixels');
 let currentMode = 'black';
+//Always load page with 16 x 16 grid
+createGrid(16);
 
 //EVENT LISTENERS 
 resetBtn.addEventListener('click', resetGrid);
@@ -27,8 +29,6 @@ function createGrid(size) {
   let gridPixels = grid.querySelectorAll('div');
   gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', changeColor));
 }
-
-createGrid(16);
 
 //FUNCTION TO CHANGE THE COLOR OF THE GRID PIXELS
 function changeColor() {
@@ -83,7 +83,7 @@ updateColorPicker()
 
 //CHANGE COLOR OF BUTTON WHEN IN USE  
 //The first for each loop is looping over each button in the node list and adding a click event listener to it using an anonymous function
-//Within the anonymous function, another for each loop is used to loop through all the buttons in the  node list and removes the class active from all of them
+//Within the anonymous function, another for each loop is used to loop through all the buttons in the node list and removes the class 'active' from all of them
 // The last part is adding the class active to the button that was clicked, as this refers to the button element that was clicked on
 function buttonClick() {
     buttonsContainer.forEach(button => button.addEventListener('click', function() {

@@ -1,11 +1,36 @@
+body {
+    background-color: ;
+}
+
 .content {
-    display: flex;
+    font-family: 'VT323', monospace;
+    margin: auto;
+    width: 70%;
     box-sizing: border-box;
+    border: 1px solid red;
+}
+
+.main {
+    display: flex;
+    border: 1px solid red;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
 }
 
 /* GRID */
+.grid-wrapper {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid red;
+}
 
 .grid-container {
+    border: 1px solid red;
     border: 0.5px solid black;
     display: grid;
     width: 500px;
@@ -18,10 +43,44 @@
 }
 
 /* BUTTONS */
+p {
+    font-size: 1.2rem;
+}
+
+.color-picker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.buttons-container {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
 
 button {
     background-color: white;
     color: black;
+    width: 150px;
+    height: 30px;
 }
 
 button:hover {
@@ -70,8 +129,6 @@ input[type='color']:active {
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
     background: white;
     cursor: pointer; 
 }
