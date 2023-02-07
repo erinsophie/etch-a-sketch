@@ -1,9 +1,15 @@
 /* MAIN */
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
 
 body {
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,252,227,1) 100%);
+    overflow: auto;
+    height: 100%;
 }
 
 .content {
