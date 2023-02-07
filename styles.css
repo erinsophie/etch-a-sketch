@@ -183,4 +183,20 @@ input[type="range"]::-moz-range-thumb {
     opacity: 1;
 }
 
+/* FOOTER */
+
+.footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #36f3d9;
+}
+
 
