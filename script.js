@@ -94,7 +94,7 @@ function buttonClick() {
 
 buttonClick()
 
-//SLIDER
+//CHANGE SIZE OF GRID WITH SLIDER
 //This function updates the size of the grid by first removing all existing grid pixels
 //then creates a new grid using the value from the slider
 //The new grid size is determined by calling the createGrid function and passing in its current value
@@ -102,18 +102,16 @@ function changePixelSize() {
     let gridPixels = grid.querySelectorAll('div');
     gridPixels.forEach(gridPixel => gridPixel.remove());
     createGrid(slider.value);
-    updateSizeLabel();
 }
 
-changePixelSize()
+//DISPLAY SIZE OF GRID
+function updateSizeLabel() {
+    slider.oninput = function() {
+          output.textContent = `${this.value} x ${this.value}`;
+      }
+}
 
-
-
-//function updateSizeLabel() {
-//    slider.oninput = function() {
-//        output.innerHTML = this.value;
-//      }
-//}
+updateSizeLabel()
 
 
 
