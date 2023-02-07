@@ -7,8 +7,6 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
     grid-gap: 1px;
     width: 500px;
     height: 500px;
@@ -43,16 +41,45 @@ button.active {
     border: none;
     width: 80px;
     height: 80px;
-  }
+}
 
 input[type='color']:hover {
     transform: scale(1.2);
-  }
+}
 
 input[type='color']:active {
     transition: transform 0.05s ease-in-out;
     transform: scale(1);
+}
+
+/* SLIDER */
+
+.slider-container {
+    height: 100px;
+    border: 1px solid red;
   }
+
+.slider {
+    width: 150px;
+    height: 25px; 
+    background: #d3d3d3; 
+    opacity: 0.7; 
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background: white;
+    cursor: pointer; 
+}
+
+
 
 
 

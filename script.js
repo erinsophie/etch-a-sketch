@@ -1,10 +1,11 @@
-// DOM NODES
 
 const grid = document.querySelector('.grid-container');
 const colorBtns = document.querySelectorAll('.color-btns');
 const resetBtn = document.querySelector('.reset-btn');
 const colorPicker = document.querySelector('#color-picker');
 const buttonsContainer = document.querySelectorAll('.buttons-container button');
+const slider = document.querySelector('.slider');
+const output = document.querySelector('#number-of-pixels');
 let currentMode = 'black';
 
 //EVENT LISTENERS 
@@ -12,19 +13,20 @@ resetBtn.addEventListener('click', resetGrid);
 colorBtns.forEach(button => button.addEventListener('click', updateCurrentMode));
 
 //CREATE GRID
-function createGrid() {
-    for (let i = 0; i < 16 * 16; i++) {
+function createGrid(size) {
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    
+    for (let i = 0; i < size * size; i++) {
     const gridItem = document.createElement('div');
     gridItem.classList.add('square');
     grid.appendChild(gridItem);
-  }
-  //grid pixels contains all divs inside grid
-  //we add an event listener to all divs inside grid 
+  } 
   let gridPixels = grid.querySelectorAll('div');
   gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', changeColor));
 }
 
-createGrid()
+createGrid(16);
 
 //FUNCTION TO CHANGE THE COLOR OF THE GRID PIXELS
 function changeColor() {
@@ -69,18 +71,36 @@ function resetGrid() {
 }
 
 //COLOR PICKER 
-colorPicker.addEventListener('input', function() {
-    currentMode = this.value;
-  });
+function updateColorPicker() {
+    colorPicker.addEventListener('input', function() {
+        currentMode = this.value;
+    });
+}
+
+updateColorPicker()
 
 //CHANGE COLOR OF BUTTON WHEN IN USE  
 //The first for each loop is looping over each button in the node list and adding a click event listener to it using an anonymous function
 //Within the anonymous function, another for each loop is used to loop through all the buttons in the  node list and removes the class active from all of them
 // The last part is adding the class active to the button that was clicked, as this refers to the button element that was clicked on
-buttonsContainer.forEach(button => button.addEventListener('click', function() {
+function buttonClick() {
+    buttonsContainer.forEach(button => button.addEventListener('click', function() {
     buttonsContainer.forEach(button => button.classList.remove('active'));
     this.classList.add('active');
   }));
+}
+
+buttonClick()
+
+//SLIDER
+function pixelSize() {
+    
+    
+}
+
+pixelSize()
+
+
 
 
 
