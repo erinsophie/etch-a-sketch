@@ -113,19 +113,3 @@ function updateSizeLabel() {
 }
 
 updateSizeLabel()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
